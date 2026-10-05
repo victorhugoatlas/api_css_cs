@@ -24,4 +24,10 @@ public class VeiculoModel
 
     // Quilometragem atual
     public int Km { get; set; }
+
+    // Preço de venda
+    public decimal Preco { get; set; }
+
+    // Cor do veículo
+    public string Cor { get; set; } = string.Empty;
 }

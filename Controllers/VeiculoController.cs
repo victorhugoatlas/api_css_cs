@@ -67,6 +67,8 @@ public class VeiculoController : ControllerBase
         veiculo.AnoModelo = veiculoModel.AnoModelo;
         veiculo.Placa = veiculoModel.Placa;
         veiculo.Km = veiculoModel.Km;
+        veiculo.Preco = veiculoModel.Preco; // <--- Adicionado
+        veiculo.Cor = veiculoModel.Cor;     // <--- Adicionado
 
         _context.Veiculos.Update(veiculo);
         await _context.SaveChangesAsync();
