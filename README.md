@@ -1,19 +1,15 @@
+```markdown
 # api_css_cs 💻
 
-Technologies • Getting Started • API Endpoints • Collaborators • Contribute
-
-API RESTful simples desenvolvida em C# para o gerenciamento do estoque de veículos de uma concessionária.
+API RESTful simples desenvolvida em C# (.NET 10) para o gerenciamento do estoque de veículos de uma concessionária.
 
 ## 💻 Technologies
 
-* C# / .NET 10
-* Entity Framework Core 10
+* C# (.NET 10)
+* ASP.NET Core Web API
+* Entity Framework Core
 * SQLite
-* Scalar API Reference
-
-## 🚀 Getting started
-
-Here you describe how to run your project locally
+* Scalar (OpenAPI / Swagger Documentation)
 
 ### Prerequisites
 
@@ -23,4 +19,87 @@ Here you describe how to run your project locally
 ### Cloning
 
 ```bash
-git clone [https://github.com/SEU-USUARIO/api_css_cs.git](https://github.com/SEU-USUARIO/api_css_cs.git)
+git clone https://github.com/victorhugoatlas/api_css_cs
+
+```
+
+### Starting
+
+```bash
+cd api_css_cs
+dotnet restore
+dotnet ef database update
+dotnet run
+
+```
+
+Acesse a documentação no navegador: `https://localhost:PORTA/scalar/v1`
+
+## 📍 API Endpoints
+
+| Route | Description |
+| --- | --- |
+| `GET /api/veiculo` | Lista todos os veículos do estoque |
+| `GET /api/veiculo/{id}` | Busca os detalhes de um veículo pelo ID |
+| `POST /api/veiculo` | Cadastra um novo veículo no estoque |
+| `PUT /api/veiculo/{id}` | Atualiza os dados de um veículo existente |
+| `DELETE /api/veiculo/{id}` | Remove um veículo do estoque |
+
+### GET /api/veiculo
+
+RESPONSE
+
+```json
+[
+  {
+    "id": 1,
+    "marca": "BMW",
+    "modelo": "R 1300 GS",
+    "versao": "PREMIUM TRIPLE BLACK ASA",
+    "anoFabricacao": 2025,
+    "anoModelo": 2026,
+    "placa": "GSA1R30",
+    "km": 2680,
+    "preco": 137000.00,
+    "cor": "PRETO"
+  }
+]
+
+```
+
+### POST /api/veiculo
+
+REQUEST
+
+```json
+{
+  "marca": "BMW",
+  "modelo": "R 1300 GS",
+  "versao": "PREMIUM TRIPLE BLACK ASA",
+  "anoFabricacao": 2025,
+  "anoModelo": 2026,
+  "placa": "GSA1R30",
+  "km": 2680,
+  "preco": 137000.00,
+  "cor": "PRETO"
+}
+
+```
+
+RESPONSE
+
+```json
+{
+  "id": 1,
+  "marca": "BMW",
+  "modelo": "R 1300 GS",
+  "versao": "PREMIUM TRIPLE BLACK ASA",
+  "anoFabricacao": 2025,
+  "anoModelo": 2026,
+  "placa": "GSA1R30",
+  "km": 2680,
+  "preco": 137000.00,
+  "cor": "PRETO"
+}
+
+```
